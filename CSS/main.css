@@ -1,0 +1,116 @@
+/*****RESET*******/
+:root {
+  --colorbackground: linear-gradient(#22b14c, #373435);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+ul {
+  list-style: none;
+}
+li a {
+  text-decoration: none;
+  color: white;
+}
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: repeat(4, min-content);
+  place-items: center;
+  grid-template-areas:
+    "header header header"
+    "menu menu menu"
+    "content content content"
+    "footer footer footer";
+}
+/**************************/
+
+/*******HEADER*********/
+header {
+  height: 120px;
+  background: var(--colorbackground);
+  grid-area: header;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1.5fr auto 0.5fr;
+  align-items: center;
+}
+
+header .logo {
+  max-width: 100%;
+  min-width: 250px;
+}
+
+header input {
+  background: rgb(204, 231, 212);
+  max-width: 370px;
+  height: 30px;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+}
+header nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  color: #fefefe;
+}
+header nav ul li::before {
+  content: "|";
+  display: inline-block;
+  height: 40px;
+  width: 5px;
+  color: currentColor;
+}
+header nav li a {
+  font-size: 1.125em;
+  color: #fefefe;
+  text-decoration: none;
+  display: inline-block;
+  padding: 10px;
+  transition: 0.1s;
+}
+.header nav li a:hover {
+  color: #2cb655;
+}
+
+header i {
+  width: 36px;
+  height: 36px;
+  cursor: pointer;
+}
+/********* FIM HEADER***/
+
+/**********MENUU CENTRAL*******/
+.menu {
+  grid-area: menu;
+}
+.menu ul {
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+  max-width: 960px;
+}
+
+.menu ul li a {
+  font-size: 1.125em;
+  padding: 10px;
+  color: #22b14c;
+}
+.menu ul li a:hover {
+  color: #373435;
+}
+
+/**************************/
+
+/**********MAIN**********/
+
+main section  {
+    display: grid;
+    grid-template-rows: repeat(2,min-content);
+    grid-template-columns: repeat(3,min-content);
+}
+
+
+
