@@ -17,7 +17,7 @@ li a {
 .wrapper {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: repeat(4, min-content);
+  grid-template-rows: auto;
   place-items: center;
   grid-template-areas:
     "header header header"
@@ -110,24 +110,29 @@ header i {
 /**********MAIN**********/
 
 main {
+  grid-column: 1/-1;
+  place-content: center;
   grid-area: 'content';
   width: 100%;
 
 }
-main .maisVendidos{
-  display: flex;
-}
 main .maisVendidos h2{
+  display: flex;
+  width: 100%;
+}
+main .maisVendidos h2,.promocoes  h2 {
   color: #22b14c;
   margin-bottom: 10px;
   font-weight: 400;
 }
 
-.maisVendidos ul {
+.maisVendidos ul, .promocoes ul {
+  grid-column:1/4 ;
   display: flex;
-  margin-top:50px ;
+  margin-top:50px;
+
 }
-.maisVendidos ul li {
+.maisVendidos ul li, .promocoes ul li {
   display: inline;
   padding: 50px;
 }
